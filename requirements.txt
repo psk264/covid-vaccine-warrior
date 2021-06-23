@@ -1,0 +1,14 @@
+# Python-dotenv reads key-value pairs from a .env file and can set them as environment variables. 
+# Reference: https://pypi.org/project/python-dotenv/
+python-dotenv
+
+# SendGrid package and API is used to send email receipt
+# Reference: https://github.com/sendgrid/sendgrid-python
+sendgrid
+
+# gspread and oauth2client are used to support the storing and reading of product data from google sheet.
+# Reference: https://gspread.readthedocs.io/en/latest/api.html#gspread.authorize, https://pypi.org/project/gspread/
+gspread 
+
+selenium
+chromedriver
