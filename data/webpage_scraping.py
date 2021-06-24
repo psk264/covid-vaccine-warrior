@@ -72,6 +72,7 @@ def website_scraper(URL):
     print(len(facility_list))
     # print(facility_list[0])
     store_data_csv(facility_list)
+    return facility_list 
 
 def store_data_csv(facility_list):
     if(len(facility_list)>0):

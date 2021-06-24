@@ -131,3 +131,7 @@ dmypy.json
 .env
 
 desktop.ini
+
+.vscode
+
+.vscode\launch.json
