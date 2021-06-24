@@ -11,4 +11,6 @@ sendgrid
 gspread 
 
 selenium
-chromedriver
+
+https://pypi.org/project/webdriver-manager/
+webdriver-manager
