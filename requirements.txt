@@ -12,5 +12,5 @@ gspread
 
 selenium
 
-https://pypi.org/project/webdriver-manager/
+#https://pypi.org/project/webdriver-manager/
 webdriver-manager
