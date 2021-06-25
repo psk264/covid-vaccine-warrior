@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import os
-
+#test
 def website_scraper(URL):
     options = webdriver.ChromeOptions()
     # options.add_argument('--headless')
