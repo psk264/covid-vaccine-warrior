@@ -10,7 +10,7 @@ import os
 
 def website_scraper(URL):
     options = webdriver.ChromeOptions()
-    # options.add_argument('--headless')
+    options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=options) #https://pypi.org/project/webdriver-manager/
@@ -40,7 +40,7 @@ def website_scraper(URL):
     temp_list = []
     facility_list = []
     articles_webelements = driver.find_elements(By.TAG_NAME,'article') 
-    print(len(articles_webelements))
+    # print(len(articles_webelements))
     for article in articles_webelements:
         # print(article.text)
         temp_list = article.text.split('\n')
@@ -83,7 +83,7 @@ def store_data_csv(facility_list):
             print("Direcotry \'data\' already exists!")
 
         current_date = datetime.datetime.now()
-        file_name = os.path.join(os.path.dirname(__file__), "..", "data", "facility_data.csv")
+        file_name = os.path.join(os.path.dirname(__file__), "..", "data", "facility_data.json")
         print(file_name)
 
         with open(file_name, "w") as file:
