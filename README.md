@@ -1,7 +1,7 @@
 # covid-vaccine-warrior
 
 
-#### Step 1: Navigate to the folder
+#### Step 1: Navigate to the folder on your desktop
 
 
 ## Part II: Set up a new virtual environment
@@ -13,6 +13,10 @@
 ## Part III: Make sure your packages are installed
 #### Step 1: Type "pip install -r requirements.txt" + ENTER into terminal
 #### Step 2: Type "pip list" + ENTER into terminal
+
+## Part IV: Run the Program
+## In the command line type "python -m app.vaccine-finder" 
+
 
 
 # Prerequisite
