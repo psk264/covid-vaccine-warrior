@@ -3,10 +3,10 @@ from selenium import webdriver
 from selenium.webdriver.common.utils import is_url_connectable
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import os
+import json
 
 def website_scraper(URL):
     options = webdriver.ChromeOptions()
@@ -71,10 +71,9 @@ def website_scraper(URL):
     print(type(facility_list))
     print(len(facility_list))
     # print(facility_list[0])
-    store_data_csv(facility_list)
     return facility_list 
 
-def store_data_csv(facility_list):
+def store_data_json(facility_list):
     if(len(facility_list)>0):
         dir_name = "data"
         try:
@@ -87,7 +86,8 @@ def store_data_csv(facility_list):
         print(file_name)
 
         with open(file_name, "w") as file:
-            file.write(str(facility_list))
+            # file.write(str(facility_list))
+            json.dump(facility_list,file)
     else:
         print("Sorry, file cannot be save! No data found.")
         exit()

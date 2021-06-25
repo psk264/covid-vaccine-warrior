@@ -1,17 +1,18 @@
-from data.webpage_scraping import website_scraper, store_data_csv
+from data.webpage_scraping import website_scraper, store_data_json
 from dotenv import load_dotenv
 import os
 import mpu
 from uszipcode import SearchEngine
 import operator
-
+import pandas as pd
+import json, ast
 
 load_dotenv()
 
 URL = os.getenv("URL", default="Incorrect URL, please set env var called 'URL'")
 
 facility_list = website_scraper(URL)
-store_data_csv(facility_list)
+store_data_json(facility_list)
 
 # distance_list = []
 
@@ -39,7 +40,7 @@ store_data_csv(facility_list)
 #             "phone_number": n["phone_number"],
 #             "distance": distance
 #     })
-# facility_list_sorted = sorted(distance_add, key=itemgetter('distance')) 
+# facility_list_sorted = sorted(distance_add, key=operator.itemgetter('distance')) 
 # facility_list_final = facility_list_sorted[0:25]
 
 # print(len(facility_list_final))  # 472
