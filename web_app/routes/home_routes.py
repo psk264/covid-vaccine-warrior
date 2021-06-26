@@ -1,13 +1,13 @@
 # web_app/routes/home_routes.py
 
 from flask import Blueprint, request, render_template
-from app.vaccine_finder import vaccine_stop
+from app.vaccine_warrior import vaccine_stop
 
 
 home_routes = Blueprint("home_routes", __name__)
 
 @home_routes.route("/")
-@home_routes.route("/vaccine_finder")
+@home_routes.route("/vaccine_warrior")
 def vaccine_finder():
     return render_template("vaccine.html")
 
