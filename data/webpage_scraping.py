@@ -7,6 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import os
 import json
+import re
 
 def website_scraper(URL):
     options = webdriver.ChromeOptions()
@@ -45,7 +46,7 @@ def website_scraper(URL):
         # print(article.text)
         temp_list = article.text.split('\n')
         single_facility_dict =  {"name_of_venue": None, "facility_type": None, "vaccines_offered": None, "availability": None, "address": None, "zip_code": None, "phone_number": None}
-        if (len(temp_list) >= 9 ):
+        if (len(temp_list) !=2  ):
             for i in range(len(temp_list)):
                 if i == 0 :
                     single_facility_dict["name_of_venue"] = temp_list[i]
@@ -54,7 +55,7 @@ def website_scraper(URL):
                 elif i == 2 :
                     single_facility_dict["address"] = temp_list[i]
                     single_facility_dict["zip_code"] = temp_list[i][-5:]
-                elif i == 3 :
+                elif i == 3 and "Vaccine" not in temp_list[i] :
                     single_facility_dict["phone_number"] = temp_list[i]
                 elif i == 5 and len(temp_list) == 10 :  #statement to handle multiple vaccine type
                     vaxtype = temp_list[i]
@@ -63,8 +64,11 @@ def website_scraper(URL):
                     single_facility_dict["vaccines_offered"] = vaxtype
                 elif i == 5 :
                     single_facility_dict["vaccines_offered"] = temp_list[i]
-                elif i == 7:
-                    single_facility_dict["availability"] = temp_list[i]
+                elif i == 6 :
+                    if("Walk-up" in temp_list[i]):
+                        single_facility_dict["availability"] = temp_list[i]
+                    else:
+                        single_facility_dict["availability"] = "Appointment only"
 
             facility_list.append(single_facility_dict)
                     
