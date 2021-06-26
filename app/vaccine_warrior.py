@@ -1,4 +1,5 @@
 from data.webpage_scraping import website_scraper, store_data_json
+# from custom_functions import calculate_dist_in_mile
 from dotenv import load_dotenv
 import os
 import mpu
@@ -14,6 +15,13 @@ URL = os.getenv("URL", default="Incorrect URL, please set env var called 'URL'")
 facility_list = website_scraper(URL)
 store_data_json(facility_list)
 
+# filepath = os.path.join(os.getcwd(), "data", "facility_data.json")
+# print(filepath)
+# with open(filepath, 'r') as datafile:
+#     data = json.load(datafile)
+# print(type(data))
+# facility_list = list(data)
+# print(len(facility_list))
 # distance_list = []
 
 # user_zip = input("Enter the zip code: ")
@@ -30,7 +38,8 @@ store_data_json(facility_list)
 #     zip2 =search.by_zipcode(n["zip_code"])
 #     lat2 =zip2.lat
 #     long2 =zip2.lng
-#     distance = float(mpu.haversine_distance((lat1,long1),(lat2,long2)))
+#     distance = round(mpu.haversine_distance((lat1,long1),(lat2,long2)),2)
+#     distance_in_mile = cf.calculate_dist_in_mile(distance)
 #     distance_add.append({
 #             "name_of_venue": n["name_of_venue"],
 #             "facility_type": n["facility_type"],
@@ -38,7 +47,7 @@ store_data_json(facility_list)
 #             "availability": n["availability"],
 #             "zip_code": n["zip_code"],
 #             "phone_number": n["phone_number"],
-#             "distance": distance
+#             "distance": distance_in_mile
 #     })
 # facility_list_sorted = sorted(distance_add, key=operator.itemgetter('distance')) 
 # facility_list_final = facility_list_sorted[0:25]
