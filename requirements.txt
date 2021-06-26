@@ -12,5 +12,9 @@ gspread
 
 selenium
 
-https://pypi.org/project/webdriver-manager/
+#https://pypi.org/project/webdriver-manager/
 webdriver-manager
+
+#Reference: https://stackoverflow.com/questions/52292765/how-to-calculate-distance-between-two-zips
+uszipcode
+mpu
