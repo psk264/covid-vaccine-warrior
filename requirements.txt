@@ -14,3 +14,6 @@ selenium
 
 #https://pypi.org/project/webdriver-manager/
 webdriver-manager
+
+#gunicorn package to run web app on Heroku
+gunicorn
