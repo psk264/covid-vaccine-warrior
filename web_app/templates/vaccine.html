@@ -1,0 +1,18 @@
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "vaccine" %}
+
+{% block content %}
+
+    <h1>Find vaccine using zipcode</h1>
+
+    <form action="/getinput" method="POST">
+
+        <label>Zip Code:</label>
+        <input type="text" name="zip_code" placeholder="10065" value="10065">
+        <br>
+
+        <button>Submit</button>
+    </form>
+
+{% endblock %}
+
