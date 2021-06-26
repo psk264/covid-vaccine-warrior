@@ -24,8 +24,8 @@ def website_scraper(URL):
 
     
 
-    print(type(driver))
-    print(driver.title)
+    print("Scraping data from website ", URL, ". It may take some time. Thank you for your patience")
+    # print(driver.title)
 ## - Code provided by Prof --##
     # articles = driver.find_elements_by_tag_name("article") # or use a different selector: https://selenium-python.readthedocs.io/locating-elements.html
     
@@ -72,8 +72,7 @@ def website_scraper(URL):
 
             facility_list.append(single_facility_dict)
                     
-    print(type(facility_list))
-    print(len(facility_list))
+    print("Total records found: ", len(facility_list))
     # print(facility_list[0])
     return facility_list 
 
