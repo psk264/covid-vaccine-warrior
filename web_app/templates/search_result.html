@@ -1,0 +1,10 @@
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "search_result" %}
+
+{% block content %}
+
+    <h1>Vaccine available for Zipcode regiion {{zip_code}} at these sites</h1>
+    <pre>{{results}}</pre>
+
+
+{% endblock %}

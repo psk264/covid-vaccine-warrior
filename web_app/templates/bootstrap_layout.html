@@ -37,14 +37,13 @@
         https://getbootstrap.com/docs/5.0/components/navbar/
     -->
     {% set nav_links = [
-      ('/about', 'about', 'About'),
-      ('/hello', 'hello', 'Hello'),
-      ('/vaccine/form', 'vaccine_form', 'Vaccine Finder')
+      ('/vaccine_finder', 'vaccine_form', 'Vaccine Finder'),
+      ('/about', 'about', 'About')
     ] -%}
     {% set active_page = active_page|default('home') -%}
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">My Web App</a>
+            <a class="navbar-brand" href="/">Vaccine Warrior: NYC COVID-19 Vaccine Finder</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -80,8 +79,8 @@
 
         <footer style="margin-top:2em; margin-bottom:2em;">
         <hr>
-            &copy; Copyright 2021 [Your Name Here] |
-            <a href="https://github.com/prof-rossetti/intro-to-python/blob/main/exercises/web-app/README.md">Source</a>
+            &copy; Copyright 2021 [Priya Khodwe, Xue Zhao, Dan Martin, Nan Xue] |
+            <a href="https://github.com/psk264/covid-vaccine-warrior">Source</a>
         </footer>
     </div>
 

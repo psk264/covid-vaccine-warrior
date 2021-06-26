@@ -1,17 +1,22 @@
 {% extends "bootstrap_layout.html" %}
+{% set active_page = "vaccine" %}
 
 {% block content %}
 
-    <h2>Vaccine availability for {{ results["city_name"] }}</h2>
+    <h1>Find vaccine using zipcode</h1>
 
-    <p>Zip Code: {{ zip_code }}</p>
+    <form action="/search_result" method="POST">
 
-    <!-- TODO: consider using a table instead of a list -->
-    <!-- TODO: consider adding images using the provided icon urls -->
-    <ul>
-    {% for forecast in results["hourly_forecasts"] %}
-        <li>{{ forecast["timestamp"] }} | {{ forecast["temp"] }} | {{ forecast["conditions"].upper() }}</li>
-    {% endfor %}
-    </ul>
+        <label>Country Code:</label>
+        <input type="text" name="country_code" placeholder="US" value="US">
+        <br>
+
+        <label>Zip Code:</label>
+        <input type="text" name="zip_code" placeholder="20057" value="20057">
+        <br>
+
+        <button>Submit</button>
+    </form>
 
 {% endblock %}
+
