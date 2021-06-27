@@ -45,9 +45,14 @@ def website_scraper(URL):
     for article in articles_webelements:
         # print(article.text)
         temp_list = article.text.split('\n')
+        vaxtype = ""
         single_facility_dict =  {"name_of_venue": None, "facility_type": None, "vaccines_offered": None, "availability": None, "address": None, "zip_code": None, "phone_number": None}
         if (len(temp_list) !=2  ):
             for i in range(len(temp_list)):
+                if("Pfizer" in temp_list[i] or "Johnson" in temp_list[i] or "Moderna" in temp_list[i]):
+                    if len(vaxtype) != 0:
+                        vaxtype = vaxtype + " , " +temp_list[i]
+                    else: vaxtype = temp_list[i]
                 if i == 0 :
                     single_facility_dict["name_of_venue"] = temp_list[i]
                 elif i == 1 :
@@ -57,19 +62,12 @@ def website_scraper(URL):
                     single_facility_dict["zip_code"] = temp_list[i][-5:]
                 elif i == 3 and "Vaccine" not in temp_list[i] : #statement to handle a case where the phone number is missing
                     single_facility_dict["phone_number"] = temp_list[i]
-                elif i == 5 and len(temp_list) == 10 :  #statement to handle multiple vaccine type
-                    vaxtype = temp_list[i]
-                    if("Pfizer" in temp_list[i+1] or "Johnson" in temp_list[i+1] or "Moderna" in temp_list[i+1]):
-                        vaxtype = temp_list[i] + "," + temp_list[i+1]
-                    single_facility_dict["vaccines_offered"] = vaxtype
-                elif i == 5 :
-                    single_facility_dict["vaccines_offered"] = temp_list[i]
-                elif i == 6 :
+                elif i==5 or i==6: 
                     if("Walk-up" in temp_list[i]):  #statement to handle a case where the availability is missing
                         single_facility_dict["availability"] = temp_list[i]
                     else:
                         single_facility_dict["availability"] = "Appointment only"
-
+            single_facility_dict["vaccines_offered"] = vaxtype
             facility_list.append(single_facility_dict)
                     
     print("Total records found: ", len(facility_list))
