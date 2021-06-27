@@ -80,7 +80,7 @@ def store_data_json(facility_list):
         try:
             os.mkdir("data")        
         except FileExistsError:
-            print("Direcotry \'data\' already exists!")
+            print("Directory \'data\' already exists!")
 
         current_date = datetime.datetime.now()
         file_name = os.path.join(os.path.dirname(__file__), "..", "data", "facility_data.json")

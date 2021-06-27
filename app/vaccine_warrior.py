@@ -1,4 +1,5 @@
 
+from logging import exception
 import re
 from data.webpage_scraping import website_scraper, store_data_json
 from dotenv import load_dotenv
@@ -16,10 +17,13 @@ from operator import itemgetter
 
 #load_dotenv()
 
-URL = os.getenv("URL", default="Incorrect URL, please set env var called 'URL'")
-
-facility_list = website_scraper(URL)
-store_data_json(facility_list)
+URL = os.getenv("URL", default="Incorrect URL, please set env var called 'URL' with a valid url")
+try:
+    facility_list = website_scraper(URL)
+    store_data_json(facility_list)
+except:
+    print("Incorrect URL, please set env var called 'URL' with a valid url")
+    exit()    
 
 script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
 rel_path = "../data/facility_data.json"
@@ -34,7 +38,7 @@ def vaccine_stop(zipcode):
     try:
         user_zip = int(zipcode)
     except ValueError:
-        result = "Invalid Zip Code. Please Check Your Inputs and Try Again"
+        result = "Invalid Zip Code. Please Check Your Inputs and Try Again."
         print(result)
         return result
 
@@ -83,8 +87,11 @@ def vaccine_stop(zipcode):
                 result = result + f["name_of_venue"] + "\n" + f["facility_type"] + "\n" + f["address"] + "\n" + "Distance: " + str(f["distance"]) + " Miles" + "\n" + "Vaccine Type: " + f["vaccines_offered"] + "\n" + f["availability"] + "\n" + "Phone: " + str(f["phone_number"]) + "\n\n\n"
         return result
 
-
-user_zip = input("Enter the zip code: ")
-result= vaccine_stop(user_zip)
-print(result)
+#This statement allows us to run the user input code conditionally i.e. 
+# .. if the app is running from command line then run these statements to ask user input
+# .. otherwise if running through pytest then skip the user input
+if __name__ == '__main__':
+    user_zip = input("Enter the zip code: ")
+    result= vaccine_stop(user_zip)
+    print(result)
 
