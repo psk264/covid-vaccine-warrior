@@ -1,3 +1,4 @@
+
 from data.webpage_scraping import website_scraper, store_data_json
 from dotenv import load_dotenv
 import os
@@ -11,6 +12,7 @@ from dateutil.parser import parse as parse_datetime
 import requests
 from pgeocode import Nominatim as Geocoder
 from operator import itemgetter
+import re
 
 load_dotenv()
 
@@ -23,8 +25,9 @@ script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
 rel_path = "../data/facility_data.json"
 abs_file_path = os.path.join(script_dir, rel_path)
 
-openfile = open(abs_file_path)
-facility_list = json.load(openfile)
+# openfile = open(abs_file_path)
+# facility_list = json.load(openfile)
+
 
 def vaccine_stop(zipcode):
     
@@ -36,17 +39,21 @@ def vaccine_stop(zipcode):
     lat1 =zip1.lat
     long1 =zip1.lng
 
-    distance_add = []
-    for n in facility_list:
-        zip2 =search.by_zipcode(n["zip_code"])
-        lat2 =zip2.lat
-        long2 =zip2.lng
+    if lat1 is None:
+        print("Invalid Zip Code. Please Check Your Inputs and Try Again.")
+        exit()
+    else:
+        distance_add = []
+        for n in facility_list:
+            zip2 =search.by_zipcode(n["zip_code"])
+            lat2 =zip2.lat
+            long2 =zip2.lng
 
-        if lat2 is None: # some zipcode returns Null lat and long
-            continue
+            if lat2 is None: # some zipcode returns Null lat and long
+                continue
 
-        distance = float(mpu.haversine_distance((lat1,long1),(lat2,long2)))
-        distance_add.append({
+            distance = float(mpu.haversine_distance((lat1,long1),(lat2,long2)))
+            distance_add.append({
                 "name_of_venue": n["name_of_venue"],
                 "facility_type": n["facility_type"],
                 "vaccines_offered": n["vaccines_offered"],
@@ -58,21 +65,20 @@ def vaccine_stop(zipcode):
         })
 
         
-    facility_list_sorted = sorted(distance_add, key=itemgetter('distance')) 
-    facility_list_final = facility_list_sorted[0:10]
-    result="\n\n\n"
-    for f in facility_list_final:
-        result = result + f["name_of_venue"] + "\n" + f["facility_type"] + "\n" + f["address"] + "\n" + "Distance: " + str(f["distance"]) + " Miles" + "\n" + "Vaccine Type: " + f["vaccines_offered"] + "\n" + f["availability"] + "\n" + "Phone: " + str(f["phone_number"]) + "\n\n\n"
-
-    return(result)
+        facility_list_sorted = sorted(distance_add, key=itemgetter('distance')) 
+        facility_list_final = facility_list_sorted[0:10]
+        result="\n\n\n"
+        for f in facility_list_final:
+            if f["distance"] > 50:
+                print("No Results Within 50 Miles of Your Location")
+                exit()
+            else:
+                result = result + f["name_of_venue"] + "\n" + f["facility_type"] + "\n" + f["address"] + "\n" + "Distance: " + str(f["distance"]) + " Miles" + "\n" + "Vaccine Type: " + f["vaccines_offered"] + "\n" + f["availability"] + "\n" + "Phone: " + str(f["phone_number"]) + "\n\n\n"
+        return result
 
 
 user_zip = input("Enter the zip code: ")
 
 result=vaccine_stop(user_zip)
 print(result)
-
-
-
-
 

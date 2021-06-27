@@ -17,3 +17,16 @@ webdriver-manager
 
 #gunicorn package to run web app on Heroku
 gunicorn
+
+webdriver-manager
+pgeocode
+pandas
+requests
+uszipcode
+Flask
+mpu
+re
+operator
+pytest
+random
+
