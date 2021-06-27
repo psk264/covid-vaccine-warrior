@@ -29,17 +29,6 @@ abs_file_path = os.path.join(script_dir, rel_path)
 # facility_list = json.load(openfile)
 
 
-# facility_list = [{'name_of_venue': 'Bedford-Stuyvesant Restoration Corporation', 'facility_type': 'Community Health Center/Clinic', 'vaccines_offered': 'Pfizer (12+),Johnson & Johnson (18+)', 'availability': 'FIRST DOSE APPOINTMENTS AVAILABLE!', 'address': '1368 Fulton Street, Community Room, Brooklyn, 11216', 'zip_code': '11216', 'phone_number': '(877) 829-4692'}, 
-# {'name_of_venue': 'BMS Family Health Center at St. Paul Community Baptist Church', 'facility_type': 'Community Health Center/Clinic', 'vaccines_offered': 'Pfizer (12+)', 'availability': 'FIRST DOSE APPOINTMENTS AVAILABLE!', 'address': '859 Hendrix Street, Brooklyn, 11207', 'zip_code': '11207', 'phone_number': '(877) 829-4692'}, 
-# {'name_of_venue': 'Bronx Co-Op City Dreiser Community Center', 'facility_type': 'Community Health Center/Clinic', 'vaccines_offered': 'Johnson & Johnson (18+)', 'availability': 'FIRST DOSE APPOINTMENTS AVAILABLE!', 'address': '177 Dreiser Loop, Bronx, 10475', 'zip_code': '10475', 'phone_number': '(877) 829-4692'}, 
-# {'name_of_venue': 'Bronx Zoo Vaccination Site', 'facility_type': 'Community Health Center/Clinic', 'vaccines_offered': 'Pfizer (12+)', 'availability': 'Walk-up vaccinations available to all eligible New Yorkers', 'address': '2300 Southern Boulevard, Bronx, 10460', 'zip_code': '10460', 'phone_number': '(877) 829-4692'}, 
-# {'name_of_venue': 'Christian Cultural Center', 'facility_type': 'Community Health Center/Clinic', 'vaccines_offered': 'Pfizer (12+)', 'availability': 'FIRST DOSE APPOINTMENTS AVAILABLE!', 'address': '12020 Flatlands Avenue, Brooklyn, 11207', 'zip_code': '11207', 'phone_number': '(877) 829-4692'}, 
-# {'name_of_venue': 'Church of God East New York', 'facility_type': 'Community Health Center/Clinic', 'vaccines_offered': 'Pfizer (12+)', 'availability': 'Schedule appointment', 'address': '905 Sutter Avenue, Brooklyn, 11207', 'zip_code': '11207', 'phone_number': '(877) 829-4692'}, 
-# {'name_of_venue': 'Church of the Holy Apostles', 'facility_type': 'Community Health Center/Clinic', 'vaccines_offered': 'Pfizer (12+)', 'availability': 'FIRST DOSE APPOINTMENTS AVAILABLE!', 'address': '296 9th Avenue, Manhattan, 10001', 'zip_code': '10001', 'phone_number': '(877) 829-4692'}, 
-# {'name_of_venue': 'Coney Island YMCA', 'facility_type': 'Community Health Center/Clinic', 'vaccines_offered': 'Moderna (18+)', 'availability': 'Walk-up vaccinations available to all eligible New Yorkers', 'address': '2980 West 29th Street, Brooklyn, 11224', 'zip_code': '11224', 'phone_number': '(877) 829-4692'}
-# ]
-
-
 def vaccine_stop(zipcode):
     
     user_zip = int(zipcode)
