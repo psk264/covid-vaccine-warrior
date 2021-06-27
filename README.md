@@ -1,5 +1,6 @@
 # covid-vaccine-warrior
 
+## Part I
 #### Step 1: Navigate to the folder on your desktop
 
 
