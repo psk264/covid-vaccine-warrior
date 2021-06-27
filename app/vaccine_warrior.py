@@ -54,7 +54,7 @@ def vaccine_stop(zipcode):
                 "address": n["address"],
                 "zip_code": n["zip_code"],
                 "phone_number": n["phone_number"],
-                "distance": float("{0:.1f}".format(distance))
+                "distance": float("{0:.2f}".format(distance))
         })
 
         
