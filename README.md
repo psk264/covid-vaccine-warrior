@@ -16,6 +16,7 @@
 
 ## Part IV: Run the Program
 ## In the command line type "python -m app.vaccine-finder" 
+## In the command line type "python -m app.vaccine_warrior" 
 
 
 # Prerequisite

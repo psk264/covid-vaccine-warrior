@@ -14,7 +14,7 @@ from pgeocode import Nominatim as Geocoder
 from operator import itemgetter
 
 
-load_dotenv()
+#load_dotenv()
 
 URL = os.getenv("URL", default="Incorrect URL, please set env var called 'URL'")
 
