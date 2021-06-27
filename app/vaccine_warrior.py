@@ -1,4 +1,5 @@
 
+import re
 from data.webpage_scraping import website_scraper, store_data_json
 from dotenv import load_dotenv
 import os
@@ -29,9 +30,15 @@ abs_file_path = os.path.join(script_dir, rel_path)
 
 
 def vaccine_stop(zipcode):
-    
-    user_zip = int(zipcode)
+    result="\n\n\n"
+    try:
+        user_zip = int(zipcode)
+    except ValueError:
+        result = "Invalid Zip Code. Please Check Your Inputs and Try Again"
+        print(result)
+        return result
 
+    
     search = SearchEngine(simple_zipcode=True)
 
     zip1 = search.by_zipcode(user_zip)
@@ -39,8 +46,9 @@ def vaccine_stop(zipcode):
     long1 =zip1.lng
 
     if lat1 is None:
-        print("Invalid Zip Code. Please Check Your Inputs and Try Again.")
-        exit()
+        result = "Invalid Zip Code. Please Check Your Inputs and Try Again."
+        print(result)
+        return result
     else:
         distance_add = []
         for n in facility_list:
@@ -66,10 +74,10 @@ def vaccine_stop(zipcode):
         
         facility_list_sorted = sorted(distance_add, key=itemgetter('distance')) 
         facility_list_final = facility_list_sorted[0:10]
-        result="\n\n\n"
+        
         for f in facility_list_final:
             if f["distance"] > 50:
-                print("No Results Within 50 Miles of Your Location")
+                result = "No Results Within 50 Miles of Your Location"
                 break
             else:
                 result = result + f["name_of_venue"] + "\n" + f["facility_type"] + "\n" + f["address"] + "\n" + "Distance: " + str(f["distance"]) + " Miles" + "\n" + "Vaccine Type: " + f["vaccines_offered"] + "\n" + f["availability"] + "\n" + "Phone: " + str(f["phone_number"]) + "\n\n\n"
@@ -77,7 +85,6 @@ def vaccine_stop(zipcode):
 
 
 user_zip = input("Enter the zip code: ")
-
-result=vaccine_stop(user_zip)
+result= vaccine_stop(user_zip)
 print(result)
 
