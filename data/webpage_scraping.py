@@ -62,7 +62,6 @@ def website_scraper(URL):
                     single_facility_dict["zip_code"] = temp_list[i][-5:]
                 elif i == 3 and "Vaccine" not in temp_list[i] : #statement to handle a case where the phone number is missing
                     single_facility_dict["phone_number"] = temp_list[i]
-                
                 elif i==5 or i==6: 
                     if("Walk-up" in temp_list[i]):  #statement to handle a case where the availability is missing
                         single_facility_dict["availability"] = temp_list[i]
