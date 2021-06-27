@@ -18,13 +18,11 @@ webdriver-manager
 #gunicorn package to run web app on Heroku
 gunicorn
 
- # Reference: https://pypi.org/project/webdriver-manager/
 webdriver-manager
 pgeocode
 pandas
 requests
 uszipcode
-gunicorn
 Flask
 mpu
 re

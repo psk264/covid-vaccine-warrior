@@ -25,8 +25,8 @@ script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
 rel_path = "../data/facility_data.json"
 abs_file_path = os.path.join(script_dir, rel_path)
 
-openfile = open(abs_file_path)
-facility_list = json.load(openfile)
+# openfile = open(abs_file_path)
+# facility_list = json.load(openfile)
 
 
 # facility_list = [{'name_of_venue': 'Bedford-Stuyvesant Restoration Corporation', 'facility_type': 'Community Health Center/Clinic', 'vaccines_offered': 'Pfizer (12+),Johnson & Johnson (18+)', 'availability': 'FIRST DOSE APPOINTMENTS AVAILABLE!', 'address': '1368 Fulton Street, Community Room, Brooklyn, 11216', 'zip_code': '11216', 'phone_number': '(877) 829-4692'}, 
