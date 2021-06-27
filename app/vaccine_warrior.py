@@ -9,10 +9,9 @@ import pandas as pd
 import json, ast
 from pprint import pprint
 from dateutil.parser import parse as parse_datetime
-import requests
 from pgeocode import Nominatim as Geocoder
 from operator import itemgetter
-import re
+
 
 load_dotenv()
 
@@ -71,7 +70,7 @@ def vaccine_stop(zipcode):
         for f in facility_list_final:
             if f["distance"] > 50:
                 print("No Results Within 50 Miles of Your Location")
-                exit()
+                break
             else:
                 result = result + f["name_of_venue"] + "\n" + f["facility_type"] + "\n" + f["address"] + "\n" + "Distance: " + str(f["distance"]) + " Miles" + "\n" + "Vaccine Type: " + f["vaccines_offered"] + "\n" + f["availability"] + "\n" + "Phone: " + str(f["phone_number"]) + "\n\n\n"
         return result
