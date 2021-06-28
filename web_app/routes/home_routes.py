@@ -8,6 +8,8 @@ home_routes = Blueprint("home_routes", __name__)
 
 @home_routes.route("/")
 @home_routes.route("/vaccine_warrior")
+@home_routes.route("/home")
+@home_routes.route("/home.html")
 def vaccine_finder():
     return render_template("vaccine.html")
 
