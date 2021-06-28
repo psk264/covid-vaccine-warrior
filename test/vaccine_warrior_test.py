@@ -1,11 +1,14 @@
+from logging import exception
 from app.vaccine_warrior import vaccine_stop
 from data.webpage_scraping import website_scraper
 import os
 
-#Test graceful failure when url contains random characters instead of valid url
-# def test_website_scraper_invalid_url():
-#     result = website_scraper("test")
-#     assert result== "selenium.common.exceptions.InvalidArgumentException: Message: invalid argument" 
+# Test graceful failure when url contains random characters instead of valid url
+def test_website_scraper_invalid_url():
+    try:
+        result = website_scraper("test")
+    except:
+        assert exception # result == "selenium.common.exceptions.InvalidArgumentException: Message: invalid argument" 
 
 #Test return type is list when input is a valid url
 def test_website_scraper_url():
