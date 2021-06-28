@@ -25,6 +25,7 @@ except:
     print("Incorrect URL, please set env var called 'URL' with a valid url")
     exit()    
 
+#Alternatively
 ## historically, vaccine stops were imported locally from facility_data.json
 #script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
 #rel_path = "../data/facility_data.json"
