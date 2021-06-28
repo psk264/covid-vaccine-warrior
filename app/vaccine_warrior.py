@@ -18,22 +18,22 @@ from memory_profiler import profile
 
 load_dotenv()
 
-
-#Alternatively
-## historically, vaccine stops were imported locally from facility_data.json
-#script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
-#rel_path = "../data/facility_data.json"
-#abs_file_path = os.path.join(script_dir, rel_path)
-
-# openfile = open(abs_file_path)
-# facility_list = json.load(openfile)
 URL = os.getenv("URL", default="Incorrect URL, please set env var called 'URL' with a valid url")
 try:
     facility_list = website_scraper(URL)
     store_data_json(facility_list)
 except:
     print("Incorrect URL, please set env var called 'URL' with a valid url")
-    exit()    
+    exit() 
+
+#Alternatively, vaccine stops were imported locally from facility_data.json
+#script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
+#rel_path = "../data/facility_data.json"
+#abs_file_path = os.path.join(script_dir, rel_path)
+
+# openfile = open(abs_file_path)
+# facility_list = json.load(openfile)
+   
 
 
 
