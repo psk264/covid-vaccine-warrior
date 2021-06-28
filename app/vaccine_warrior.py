@@ -13,6 +13,7 @@ from pprint import pprint
 from dateutil.parser import parse as parse_datetime
 from pgeocode import Nominatim as Geocoder
 from operator import itemgetter
+from memory_profiler import profile
 
 
 load_dotenv()
@@ -27,7 +28,7 @@ load_dotenv()
 # openfile = open(abs_file_path)
 # facility_list = json.load(openfile)
 
-
+@profile
 def vaccine_stop(zipcode):
     result="\n\n\n"
     try:

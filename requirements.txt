@@ -19,6 +19,8 @@ webdriver-manager
 gunicorn
 
 webdriver-manager
+
+# Reference: https://pypi.org/project/pgeocode/
 pgeocode
 pandas
 requests
@@ -28,3 +30,4 @@ mpu
 pytest
 
 
+memory_profiler
