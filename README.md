@@ -60,13 +60,14 @@ After above mentioned setup is complete, depending on your preference on appraoc
    4. The top 10 records from the sorted list is displayed as the closest facilities <br/>
 **NOTE:** The code is equipped to handle error scenarios like invalid zip code, random string instead of zip code, longer or shorter than 5-digit zip code
 2. Run a local web app:  <br/> 
-        ````# Mac OS: 
-            FLASK_APP=web_app flask run
-            # Windows OS:
-            # ... if `export` doesn't work for you, try `set` instead
-            export FLASK_APP=web_app 
-            flask run ````
-            
+    ```
+    # Mac OS: 
+          FLASK_APP=web_app flask run
+    # Windows OS:
+    # ... if `export` doesn't work for you, try `set` instead
+          export FLASK_APP=web_app 
+          flask run  
+    ```
     1. Using above command, the program will go through the initial steps as mentioned in 1.  Enter the valid zip code in command line when prompted to move on to web app code
     2. After successful message, the web application will be accessible at http://127.0.0.1:5000  or http://localhost:5000
   
