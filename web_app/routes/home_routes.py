@@ -30,3 +30,10 @@ def search_result():
     else:
         flash(results, "danger")
         return redirect("/vaccine_warrior")
+    
+@home_routes.route("/facility.json")
+def facility_api():
+    if facility_list:
+        return jsonify(facility_list)
+    else:
+        return jsonify({"message":"Input Error"}), 404
