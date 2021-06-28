@@ -1,4 +1,37 @@
-# covid-vaccine-warrior
+# Objective 
+This repository contains the code for a COVID-19 vaccine finder within the five boroughs of New York City.  The code takes zip code as user input and list the top 10 closest facilities and shows its details (address, facility type, phone number, vaccine offered, availability).
+
+# Features and Capabilities
+* Website scrapping to gather data on NYC vaccination facilities 
+* Execution through command line 
+* Execution through web application (local)
+* Execution through web application on web server through integration with Heroku 
+* Code quality monitoring through integration with CodeClimate
+* Continuous integration and testing through integration with Travis CI
+
+
+# Prerequisite
+* Anaconda 3.7+
+* Python 3.7+
+* Pip
+* Git Bash
+* Selenium
+
+# Packages
+* [python-dotenv](https://pypi.org/project/python-dotenv/) 
+* [selenium](https://selenium-python.readthedocs.io/)
+* [webdriver_manager](https://pypi.org/project/webdriver-manager/)
+* [pgeocode](https://pypi.org/project/pgeocode/)
+* [pandas](https://pandas.pydata.org/)
+* [requests](https://docs.python-requests.org/)
+* [uszipcode](https://pypi.org/project/uszipcode/)
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+* [mpu](https://mpu.readthedocs.io/)
+
+# Setup
+1. .env file
+2. requirements file , if not already present in repo
+3. # covid-vaccine-warrior
 
 ## Part I
 #### Step 1: Navigate to the folder on your desktop
@@ -19,34 +52,6 @@
 ## In the command line type "python -m app.vaccine_warrior" 
 
 
-# Prerequisite
-* Anaconda 3.7+
-* Python 3.7+
-* Pip
-* Git Bash
-* ChromeDriver
-
-# Objective 
-
-# Features and Capabilities
-* Integration with CodeClimate
-
-# Packages
-* python-dotenv
-* selenium
-* webdriver_manager.chrome
-* pgeocode
-* pandas
-* requests
-* uszipcode
-* Flask
-* mpu
-* re
-* operator
-
-# Setup
-1. .env file
-2. requirements file , if not already present in repo
 
 # Instructions
 
