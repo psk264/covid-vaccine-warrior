@@ -75,8 +75,9 @@ After above mentioned setup is complete, depending on your preference on appraoc
     ![2021-06-27_21h51_48](https://user-images.githubusercontent.com/84349071/123568256-f07ebe80-d791-11eb-83af-95dc1b72f9ee.png)
  3. Deploying to Production (using Heroku) <br/>   
     1. After the web app is running successfully, it can deployed to remote server
-    2. First, if not already done, register for Heroku account and integrate with github account.  Then using command line enter ``heroku login``  and follow the prompt
+    2. First, if not already done, [register for Heroku account](https://github.com/prof-rossetti/intro-to-python/blob/master/notes/clis/heroku.md#prerequisites), [install Heroku CLI](https://github.com/prof-rossetti/intro-to-python/blob/master/notes/clis/heroku.md#installation) and integrate with github account.  Then using command line enter ``heroku login``  and follow the prompt
     **Note:** When using git bash terminal to login to heroku, the terminal may hang after successful login.  In case this happens, start a new terminal.  It will automatically log the user in.
+    2. Follow the instructions on Professor's [heroku deployment guide](https://github.com/prof-rossetti/intro-to-python/blob/main/exercises/web-service/DEPLOYING.md) to complete the heroku setup.  Use this repo instead of the on mentioned in the Professor Rossetti's guide to setup covid-vaccine-warrior app on heroku 
     3. Create a config file named `Procfile` so heroku knows how to run the app, in Procfile file copy and paste the following line of code: <br/> ```web: gunicorn "web_app:create_app()"``` <br/>
     4. Push all the changes from main branch to heroku main branch using heroku command <br/> ```git heroku push main```
     5. The app will be available at: https://vaccine-warrior.herokuapp.com/ if you are using the collaborated heroku account of team Violet python.  Otherwise, the app will be available at your own heroku app url which will be displayed on the command line after you run this command
