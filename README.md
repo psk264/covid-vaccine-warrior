@@ -35,42 +35,22 @@ This repository contains the code for a COVID-19 vaccine finder within the five 
     URL="https://vaccinefinder.nyc.gov/"
     APP_ENV="production"
     ZIP_CODE="10005"
-2. requirements file , if not already present in repo
-3. # covid-vaccine-warrior
+2. Additionally, if the requirements files is not already present in repository or its missing when repository is cloned then create a requirements.txt file under the root folder and copy all the above mentioned packages' name into the file and save it
 
-### Part I
-##### Step 1: Navigate to the folder on your desktop
-
-
-### Part II: Set up a new virtual environment
-##### Step 1: Type "conda create -n vaccine-env python=3.8" + ENTER in the terminal application
-##### Step 2: Type "y" + ENTER two times accept terminal conditions
-##### Step 3: Type "conda activate vaccine-env" + ENTER 
-##### Step 4: Type "conda init - bash"  + ENTER 
-
-### Part III: Make sure your packages are installed
-##### Step 1: Type "pip install -r requirements.txt" + ENTER into terminal
-##### Step 2: Type "pip list" + ENTER into terminal
-
-### Part IV: Run the Program
-### In the command line type "python -m app.vaccine-finder" 
-### In the command line type "python -m app.vaccine_warrior" 
-
-
-
-## Instructions
 ## Instructions
 1. Use git client to clone or download this remote repository, [covid-vaccine-warrior](https://github.com/psk264/covid-vaccine-warrior/), on your local machine.  Note the location where it is cloned or downloaded
 2. Use command line application to navigate to the location where this repository was cloned or downloaded.  Ensure that ``<base>`` from conda initialization is shown on cmd line.  If ``<base>`` is not shown then, before proceeding, run command:<br/>
 ```conda init bash```
-3. Since this code uses specific packages like python-dotenv, it is recommended to create a new project specific anaconda virtual environment. Here we create virtual environment name "vaccine-warrior-env" using following command.  To create a environment with a different name, simply replace rpc-game-env with desired name:<br/>
+3. Since this code uses specific packages like python-dotenv, it is recommended to create a new project specific anaconda virtual environment. Here we create virtual environment name "vaccine-warrior-env" using following command.  To create a environment with a different name, simply replace vaccine-warrior-env with desired name:<br/>
 ``` conda create -n vaccine-warrior-env python=3.8```
+Note: The terminal may prompt for user input [y/n] during install, input Y and hit Enter
 4. Activate the Anaconda environment "shopping-cart-env" using the command:<br/>
 ```conda activate vaccine-warrior-env```
 5. After virtual environment is active i.e. ``<vaccine-warrior>`` is shown on command-line, then install the third-party package python-dotenv on this virtual environment using command:<br/>
  ```pip install -r requirements.txt```<br/>
 **NOTE:** The requirements.txt file is already provided in the repository.
-6. After the setup is complete, depending on your preference on appraoches mentioned above, start the program using one of the following commands:<br/>
+6. To ensure all packages are installed, you can list the packages using ```pip list``` 
+7. After the setup is complete, depending on your preference on appraoches mentioned above, start the program using one of the following commands:<br/>
 Run using command prompt:  ```python -m app.vaccine_warrior```   
 Run a local web app:  ```FLASK_APP=web_app flask run```  <br/> 
 
