@@ -1,4 +1,3 @@
-![2021-06-27_21h49_55](https://user-images.githubusercontent.com/84349071/123568116-a564ab80-d791-11eb-8918-c8b19cf136e8.png)
 # Group Project by team Violet Python, NYU Stern, Summer 2021
 
 ## Objective 
