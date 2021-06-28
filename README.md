@@ -1,3 +1,4 @@
+![2021-06-27_21h49_55](https://user-images.githubusercontent.com/84349071/123568116-a564ab80-d791-11eb-8918-c8b19cf136e8.png)
 # Group Project by team Violet Python, NYU Stern, Summer 2021
 
 ## Objective 
@@ -70,6 +71,20 @@ After above mentioned setup is complete, depending on your preference on appraoc
     ```
     1. Using above command, the program will go through the initial steps as mentioned in 1.  Enter the valid zip code in command line when prompted to move on to web app code
     2. After successful message, the web application will be accessible at http://127.0.0.1:5000  or http://localhost:5000
+    ![image](https://user-images.githubusercontent.com/84349071/123568185-cc22e200-d791-11eb-81d6-d621ac0d73b0.png)
+    3. Enter the zip code in the input text field to see the top 10 closest facility information
+    ![2021-06-27_21h51_48](https://user-images.githubusercontent.com/84349071/123568256-f07ebe80-d791-11eb-83af-95dc1b72f9ee.png)
+ 3. Deploying to Production (using Heroku) <br/>   
+    1. After the web app is running successfully, it can deployed to remote server
+    2. First, if not already done, register for Heroku account.  Then using command line enter ``heroku login``  and follow the prompt
+    **Note:** When using git bash terminal to login to heroku, the terminal may hang after successful login.  In case this happens, start a new terminal.  It will automatically log the user in.
+    3. Create a config file named `Procfile` so heroku knows how to run the app, in Procfile file copy and paste the following line of code: <br/> ```web: gunicorn "web_app:create_app()"``` <br/>
+    4. Push all the changes from main branch to heroku main branch using heroku command <br/> ```git heroku push main```
+    5. Tail the server log using command ``heroku logs --tail`` to troubleshoot
+    Reference Material: <br/> * [Heroku - Getting started with python](https://devcenter.heroku.com/articles/getting-started-with-python) <br/> 2. [Gunicorn](https://devcenter.heroku.com/articles/python-gunicorn) <br/>
+    
+    
+
   
   
  
