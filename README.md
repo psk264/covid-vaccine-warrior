@@ -1,4 +1,4 @@
-# Group Project by team Violet Python, NYU Stern, Summer 2021
+# Project by team Violet Python (NYU Stern, Summer 2021)
 
 ## Objective 
 This repository contains the code for a COVID-19 vaccine finder within the five boroughs of New York City.  The code takes zip code as user input and list the top 10 closest facilities and shows its details (address, facility type, phone number, vaccine offered, availability).
