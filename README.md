@@ -80,13 +80,11 @@ After above mentioned setup is complete, depending on your preference on appraoc
     **Note:** When using git bash terminal to login to heroku, the terminal may hang after successful login.  In case this happens, start a new terminal.  It will automatically log the user in.
     3. Create a config file named `Procfile` so heroku knows how to run the app, in Procfile file copy and paste the following line of code: <br/> ```web: gunicorn "web_app:create_app()"``` <br/>
     4. Push all the changes from main branch to heroku main branch using heroku command <br/> ```git heroku push main```
-    5. Tail the server log using command ``heroku logs --tail`` to troubleshoot
-    Reference Material: <br/> * [Heroku - Getting started with python](https://devcenter.heroku.com/articles/getting-started-with-python) <br/> 2. [Gunicorn](https://devcenter.heroku.com/articles/python-gunicorn) <br/>
+    5. Tail the server log using command ``heroku logs --tail`` to troubleshoot <br/>
     
-    
-
-  
-  
+    **Additional Reference Material:** <br/> 
+    * [Heroku - Getting started with python](https://devcenter.heroku.com/articles/getting-started-with-python) <br/> 
+    * [Gunicorn](https://devcenter.heroku.com/articles/python-gunicorn) <br/>
  
 
 ## Additional Information
