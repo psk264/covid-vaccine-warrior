@@ -10,8 +10,8 @@ This repository contains the code for a COVID-19 vaccine finder within the five 
 * API End point to access the facility data 
 * Execution through web application on web server through integration with Heroku 
 * Code quality monitoring through integration with CodeClimate
-* Continuous integration and testing through integration with Travis CI
-
+* Continuous integration and testing through integration with Travis CI <br/> 
+<br><img src="https://user-images.githubusercontent.com/84349071/123699036-cb8b5980-d82c-11eb-83ea-b872bd993bfb.png" alt="dfd" width="900" height="550"> <br>
 
 ## Prerequisite
 * Anaconda 3.7+
