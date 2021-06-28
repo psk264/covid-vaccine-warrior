@@ -7,6 +7,7 @@ This repository contains the code for a COVID-19 vaccine finder within the five 
 * Website scrapping to gather data on NYC vaccination facilities 
 * Execution through command line 
 * Execution through web application (local)
+* API End point to access the facility data 
 * Execution through web application on web server through integration with Heroku 
 * Code quality monitoring through integration with CodeClimate
 * Continuous integration and testing through integration with Travis CI
@@ -73,6 +74,14 @@ After above mentioned setup is complete, depending on your preference on appraoc
     ![image](https://user-images.githubusercontent.com/84349071/123568185-cc22e200-d791-11eb-81d6-d621ac0d73b0.png)
     3. Enter the zip code in the input text field to see the top 10 closest facility information
     ![2021-06-27_21h51_48](https://user-images.githubusercontent.com/84349071/123568256-f07ebe80-d791-11eb-83af-95dc1b72f9ee.png)
+    4. Here are all the different pages for vacine warrior app: <br/> 
+      * http://localhost:5000/
+      * http://localhost:5000/home
+      * http://localhost:5000/home.html
+      * http://localhost:5000/vaccine_warrior
+      * http://localhost:5000/about
+    5. App also provides an API Endpoint facility.json which contains the json data of all the facilities
+      * http://localhost:5000/facility.json
  3. Deploying to Production (using Heroku) <br/>   
     1. After the web app is running successfully, it can deployed to remote server
     2. First, if not already done, [register for Heroku account](https://github.com/prof-rossetti/intro-to-python/blob/master/notes/clis/heroku.md#prerequisites), [install Heroku CLI](https://github.com/prof-rossetti/intro-to-python/blob/master/notes/clis/heroku.md#installation) and integrate with github account.  Then using command line enter ``heroku login``  and follow the prompt
