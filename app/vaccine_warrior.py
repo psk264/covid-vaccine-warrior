@@ -27,6 +27,15 @@ load_dotenv()
 
 # openfile = open(abs_file_path)
 # facility_list = json.load(openfile)
+URL = os.getenv("URL", default="Incorrect URL, please set env var called 'URL' with a valid url")
+try:
+    facility_list = website_scraper(URL)
+    store_data_json(facility_list)
+except:
+    print("Incorrect URL, please set env var called 'URL' with a valid url")
+    exit()    
+
+
 
 @profile
 def vaccine_stop(zipcode):
@@ -87,15 +96,6 @@ def vaccine_stop(zipcode):
 # .. if the app is running from command line then run these statements to ask user input
 # .. otherwise if running through pytest then skip the user input
 if __name__ == '__main__':
-    URL = os.getenv("URL", default="Incorrect URL, please set env var called 'URL' with a valid url")
-    try:
-        facility_list = website_scraper(URL)
-        store_data_json(facility_list)
-    except:
-        print("Incorrect URL, please set env var called 'URL' with a valid url")
-        exit()    
-
-
     user_zip = input("Enter the zip code: ")
     result= vaccine_stop(user_zip)
     print(result)
