@@ -1,6 +1,6 @@
 # web_app/routes/home_routes.py
 
-from flask import Blueprint, request, render_template
+from flask import Blueprint, request, render_template, redirect, flash
 from app.vaccine_warrior import vaccine_stop
 
 
@@ -24,4 +24,9 @@ def search_result():
     print("zip code: ", zip_code)
     results = vaccine_stop(zipcode=zip_code)
     print(results)
-    return render_template("search_result.html", zip_code=zip_code, results=results)
+    if "Phone" in results:
+        flash("Vaccine Information Generated Successfully!", "success")
+        return render_template("search_result.html", zip_code=zip_code, results=results)
+    else:
+        flash(results, "danger")
+        return redirect("/vaccine_warrior")

@@ -25,9 +25,10 @@ except:
     print("Incorrect URL, please set env var called 'URL' with a valid url")
     exit()    
 
-script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
-rel_path = "../data/facility_data.json"
-abs_file_path = os.path.join(script_dir, rel_path)
+## historically, vaccine stops were imported locally from facility_data.json
+#script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
+#rel_path = "../data/facility_data.json"
+#abs_file_path = os.path.join(script_dir, rel_path)
 
 # openfile = open(abs_file_path)
 # facility_list = json.load(openfile)
@@ -38,7 +39,7 @@ def vaccine_stop(zipcode):
     try:
         user_zip = int(zipcode)
     except ValueError:
-        result = "Invalid Zip Code. Please Check Your Inputs and Try Again."
+        result = "Your Input " + str(zipcode) + " is not a Valid Zip Code. Please Check Your Inputs and Try Again."
         print(result)
         return result
 
@@ -50,7 +51,7 @@ def vaccine_stop(zipcode):
     long1 =zip1.lng
 
     if lat1 is None:
-        result = "Invalid Zip Code. Please Check Your Inputs and Try Again."
+        result = "Your Input " + str(user_zip) + " is not a Valid Zip Code. Please Check Your Inputs and Try Again."
         print(result)
         return result
     else:
@@ -81,7 +82,7 @@ def vaccine_stop(zipcode):
         
         for f in facility_list_final:
             if f["distance"] > 50:
-                result = "No Results Within 50 Miles of Your Location"
+                result = "No Results Within 50 Miles of Your Input Zip Code " + str(user_zip) + ". Please Enter a Valid NYC Zip Code."
                 break
             else:
                 result = result + f["name_of_venue"] + "\n" + f["facility_type"] + "\n" + f["address"] + "\n" + "Distance: " + str(f["distance"]) + " Miles" + "\n" + "Vaccine Type: " + f["vaccines_offered"] + "\n" + f["availability"] + "\n" + "Phone: " + str(f["phone_number"]) + "\n\n\n"

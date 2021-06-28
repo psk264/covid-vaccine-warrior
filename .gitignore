@@ -135,3 +135,5 @@ desktop.ini
 .vscode
 
 .vscode/launch.json
+vaccine-warrior/
+data/facility_data.json
