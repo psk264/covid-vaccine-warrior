@@ -28,6 +28,3 @@ uszipcode
 Flask
 mpu
 pytest
-
-
-memory_profiler
