@@ -32,7 +32,7 @@ This repository contains the code for a COVID-19 vaccine finder within the five 
 * [mpu](https://mpu.readthedocs.io/)
 
 ## Setup
-1. In in the root directory of your local repository, create a new file called ".env", and update the contents of the ".env" file to specify following information:
+1. In the root directory of your local repository, create a new file called ".env", and update the contents of the ".env" file to specify following information:
 ```   
     URL="https://vaccinefinder.nyc.gov/"
     APP_ENV="production"
@@ -45,9 +45,9 @@ This repository contains the code for a COVID-19 vaccine finder within the five 
 5. Since this code uses specific packages like python-dotenv, it is recommended to create a new project specific anaconda virtual environment. Here we create virtual environment name "vaccine-warrior-env" using following command.  To create a environment with a different name, simply replace vaccine-warrior-env with desired name:<br/>
 ``` conda create -n vaccine-warrior-env python=3.8```
 Note: The terminal may prompt for user input [y/n] during install, input Y and hit Enter
-6. Activate the Anaconda environment "shopping-cart-env" using the command:<br/>
+6. Activate the Anaconda environment "vaccine-warrior-env" using the command:<br/>
 ```conda activate vaccine-warrior-env```
-7. After virtual environment is active i.e. ``<vaccine-warrior>`` is shown on command-line, then install the third-party package python-dotenv on this virtual environment using command:<br/>
+7. After virtual environment is active i.e. ``<vaccine-warrior-env>`` is shown on command-line, then install the third-party package python-dotenv on this virtual environment using command:<br/>
  ```pip install -r requirements.txt```<br/>
 **NOTE:** The requirements.txt file is already provided in the repository.
 8. To ensure all packages are installed, you can list the packages using ```pip list```
